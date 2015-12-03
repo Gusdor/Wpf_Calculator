@@ -39,7 +39,7 @@ namespace Wpf_Calculator
         /// This fucntion handles clearing and displaying digit on display.
         /// Also checks and limits the digits in operand to four digits
         /// </summary> 
-        private void GetValue(object sender, RoutedEventArgs e)
+        private void Button_Calculator_Click(object sender, RoutedEventArgs e)
         {
             string content = (sender as Button).Content.ToString();
 
