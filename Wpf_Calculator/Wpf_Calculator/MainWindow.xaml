@@ -5,81 +5,94 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf_Calculator"
         mc:Ignorable="d" xmlns:sys="clr-namespace:System;assembly=mscorlib"
-        Title="Calculator" Background="#FFCBDAEE" SizeToContent="WidthAndHeight" ResizeMode="NoResize">
+        Title="Calculator" Background="#FFCBDAEE" SizeToContent="WidthAndHeight" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Cursor="Hand" Height="382.866">
     <Window.Resources>
         <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="Height" Value="33"/>
-            <Setter Property="Width" Value="38"/>
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Height" Value="33" />
+            <Setter Property="Width" Value="38" />
         </Style>
         <Style x:Key="HorizontalButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
-            <Setter Property="Width" Value="Auto"/>
+            <Setter Property="Width" Value="Auto" />
         </Style>
         <Style x:Key="VerticalButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
-            <Setter Property="Height" Value="Auto"/>
+            <Setter Property="Height" Value="Auto" />
         </Style>
     </Window.Resources>
-    <Grid HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top">
+
+    <Grid HorizontalAlignment="Left" Margin="0,31,0,0" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <TextBox Margin="5" Name="TxtBox_Display" Background="#FFE5F7F7" TextAlignment="Right" HorizontalAlignment="Stretch" VerticalAlignment="Top"  Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="2" FontSize="16" Text="0" Height="50"/>
 
+        <TextBox Margin="5" Name="TxtBox_Display" Background="#FFE5F7F7" TextAlignment="Right" HorizontalAlignment="Stretch" VerticalAlignment="Top"  Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="2" FontSize="16" Text="0" Height="50" />
 
-        <Button Height="33" Width="38" Name="btn_MC" Content="MC" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Memory_Functions"/>
-        <Button Height="33" Width="38" Name="btn_MR" Content="MR" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Memory_Functions"/>
-        <Button Height="33" Width="38" Name="btn_MS" Content="MS" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Memory_Functions"/>
-        <Button Height="33" Width="38" Name="btn_Mplus" Content="M+" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Memory_Functions"/>
-        <Button Height="33" Width="38" Name="btn_Mminus" Content="M-" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="5" Grid.Row="3" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Memory_Functions"/>
+        <Button  Name="btn_MC" Content="MC" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Memory_Functions" />
+        <Button Name="btn_MR" Content="MR" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Memory_Functions" />
+        <Button Name="btn_MS" Content="MS" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Memory_Functions" />
+        <Button Name="btn_Mplus" Content="M+" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Memory_Functions" />
+        <Button Name="btn_Mminus" Content="M-" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="5" Grid.Row="3" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Memory_Functions" />
 
-        <Button Height="33" Width="38" Name="btn_DEL" Content="DEL" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="1" Grid.RowSpan="1"/>
-        <Button Height="33" Width="38" Name="btn_CE" Content="CE" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="1" Grid.RowSpan="1" />
-        <Button Height="33" Width="38" Name="btn_Clear" Content="C" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Calculator_Click"/>
-        <Button Height="33" Width="38" Name="btn_OpPlusorMinus" Content="±" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="1" Grid.RowSpan="1"/>
-        <Button Height="33" Width="38" Name="btn_OpSqrt" Content="SQRT" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="5" Grid.Row="4" Grid.ColumnSpan="1" Grid.RowSpan="1"/>
+        <Button Name="btn_DEL" Content="DEL" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="1" Grid.RowSpan="1" />
+        <Button Name="btn_CE" Content="CE" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="1" Grid.RowSpan="1" />
+        <Button Name="btn_Clear" Content="C" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Calculator_Click" />
+        <Button Name="btn_OpPlusorMinus" Content="±" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="1" Grid.RowSpan="1" />
+        <Button Name="btn_OpSqrt" Content="SQRT" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="5" Grid.Row="4" Grid.ColumnSpan="1" Grid.RowSpan="1" />
 
-        <Button Height="33" Width="38" Name ="btn_DigitSeven" Content="7" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Calculator_Click"/>
-        <Button Height="33" Width="38" Name="btn_DigitEight" Content="8" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Calculator_Click"/>
-        <Button Height="33" Width="38" Name="btn_DigitNine" Content="9" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Calculator_Click"/>
-        <Button Height="33" Width="38" Name="btn_OpDivide" Content="/" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="MathsOperations"/>
-        <Button Height="33" Width="38" Name="btn_OpModulo" Content="%" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="5" Grid.Row="5" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="MathsOperations"/>
+        <Button Name ="btn_DigitSeven" Content="7" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Calculator_Click" />
+        <Button Name="btn_DigitEight" Content="8" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Calculator_Click" />
+        <Button Name="btn_DigitNine" Content="9" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Calculator_Click" />
+        <Button Name="btn_OpDivide" Content="/" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="MathsOperations" />
+        <Button Name="btn_OpModulo" Content="%" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="5" Grid.Row="5" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="MathsOperations" />
 
-        <Button Height="33" Width="38" Name="btn_DigitFour" Content="4" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Calculator_Click"/>
-        <Button Height="33" Width="38" Name="btn_DigitFive" Content="5" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Calculator_Click"/>
-        <Button Height="33" Width="38" Name="btn_DigitSix" Content="6" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Calculator_Click"/>
-        <Button Height="33" Width="38" Name="btn_OpMultiply" Content="*" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="MathsOperations"/>
-        <Button Height="33" Width="38" Name="btn_OpOneDivBy"  Content="1/x" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="5" Grid.Row="6" Grid.ColumnSpan="1" Grid.RowSpan="1"/>
+        <Button Name="btn_DigitFour" Content="4" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Calculator_Click" />
+        <Button Name="btn_DigitFive" Content="5" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Calculator_Click" />
+        <Button Name="btn_DigitSix" Content="6" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Calculator_Click" />
+        <Button Name="btn_OpMultiply" Content="*" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="MathsOperations" />
+        <Button Name="btn_OpOneDivBy"  Content="1/x" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="5" Grid.Row="6" Grid.ColumnSpan="1" Grid.RowSpan="1" />
 
-        <Button Height="33" Width="38" Name="btn_DigitOne" Content="1" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Calculator_Click"/>
-        <Button Height="33" Width="38" Name="btn_DigitTwo" Content="2"  Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1"  Margin="0,0,6,0" Click="Button_Calculator_Click"/>
-        <Button Height="33" Width="38" Name="btn_DigitThree" Content="3"  Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Calculator_Click"/>
-        <Button Name="btn_OpMinus" Content="-"  Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="MathsOperations"/>
-        <Button Name="btn_OpEquals" Content="="  Grid.Column="5" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="2" Click="CalculateResult" Style="{DynamicResource VerticalButton}"/>
+        <Button Name="btn_DigitOne" Content="1" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Calculator_Click" />
+        <Button Name="btn_DigitTwo" Content="2"  Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1"  Margin="0,0,6,0" Click="Button_Calculator_Click" />
+        <Button Name="btn_DigitThree" Content="3"  Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Calculator_Click" />
+        <Button Name="btn_OpMinus" Content="-"  Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="MathsOperations" />
+        <Button Name="btn_OpEquals" Content="="  Grid.Column="5" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="2" Click="CalculateResult" Style="{DynamicResource VerticalButton}" />
 
         <Button Name="btn_DigitZero" Content="{Binding Tag, RelativeSource={RelativeSource Self}}"  Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_Calculator_Click" Style="{DynamicResource HorizontalButton}">
             <Button.Tag>
                 <sys:Int32>0</sys:Int32>
             </Button.Tag>
         </Button>
-        <Button Height="33" Width="38" Name="btn_Period" Content="." HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="3" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" FontWeight="Bold"/>
-        <Button Height="33" Width="38" Name="btn_OpPlus" Content="+" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="MathsOperations"/>
+        <Button Name="btn_Period" Content="." HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="3" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" FontWeight="Bold" />
+        <Button Name="btn_OpPlus" Content="+" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="MathsOperations" />
+
+        <Menu Grid.ColumnSpan="7" Height="22" Margin="0,-32,0,0" Width="250" VerticalAlignment="Top">
+            <MenuItem Header="View" />
+            <MenuItem Header="Edit">
+                <MenuItem Header="Copy" Click="Edit_Copy_Calculator_Click"></MenuItem>
+                <MenuItem Header="Cut" Click="Edit_Cut_Calculator_Click"></MenuItem>
+                <MenuItem Header="Paste" Click="Edit_Paste_Calculator_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="_About" Click="Help_About_Calculator"></MenuItem>
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>
